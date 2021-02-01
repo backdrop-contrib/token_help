@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Provides a page listing all tokens on the site.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function token_help_menu() {
+
+  $items['admin/content/tokens'] = array(
+    'title' => 'Tokens',
+    'description' => 'Lists all tokens on the website.',
+    'page callback' => 'token_help_view',
+    'access arguments' => array('access administration pages'),
+  );
+
+  return $items;
+}
+
+
+/**
+ * Return a list of all tokens.
+ */
+function token_help_view() {
+  return theme('token_tree', array(
+    'token_types' => 'all',
+    'click_insert' => FALSE,
+    'show_restricted' => TRUE));
+}

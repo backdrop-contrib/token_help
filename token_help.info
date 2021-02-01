@@ -1,0 +1,5 @@
+name = Token Help
+description = Provides a help page that lists all tokens.
+version = 1.x-1.0
+backdrop = 1.x
+type = module
