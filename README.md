@@ -1,7 +1,9 @@
 Token Help
 ==========
 
-This module creates a page that lists all tokens, like the Drupal page that was at admin/help/token but was removed in Backdrop (since the admin Help menu was removed).
+This module creates an administrative page that lists all tokens, like the Drupal page that was at admin/help/token but was removed in Backdrop (since the admin Help menu was removed).
+
+It also provides a developer page at admin/development/information/tokens that lists the data that various tokens need and/or provide, which is useful when developing token-related modules.
 
 Installation
 ------------

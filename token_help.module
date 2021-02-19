@@ -16,6 +16,13 @@ function token_help_menu() {
     'access arguments' => array('access administration pages'),
   );
 
+  $items['admin/devel/info/tokens'] = array(
+    'title' => 'Token info',
+    'description' => 'Lists developer information about all tokens on the website.',
+    'page callback' => 'token_help_devel_view',
+    'access arguments' => array('access administration pages'),
+  );
+
   return $items;
 }
 
@@ -28,4 +35,72 @@ function token_help_view() {
     'token_types' => 'all',
     'click_insert' => FALSE,
     'show_restricted' => TRUE));
+}
+
+
+/**
+ * Return a list of developer information for all tokens.
+ */
+function token_help_devel_view() {
+  $token_info = token_info();
+
+  $build[] = array(
+    '#markup' => t('Types'),
+    '#prefix' => '<h2>',
+    '#suffix' => '</h2>',
+  );
+  $header = array(
+    array('data' => 'type'),
+    array('data' => 'name'),
+    array('data' => 'description'),
+    array('data' => 'needs-data'),
+  );
+  $rows = array();
+  foreach ($token_info['types'] as $type => $data) {
+    $rows[] = array(
+      array('data' => $type),
+      array('data' => $data['name']),
+      array('data' => $data['description']),
+      array('data' => $data['needs-data']),
+    );
+  }
+  $build[] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+  );
+
+  $build[] = array(
+    '#markup' => t('Tokens'),
+    '#prefix' => '<h2>',
+    '#suffix' => '</h2>',
+  );
+  $header = array(
+    array('data' => 'type'),
+    array('data' => 'token'),
+    array('data' => 'name'),
+    array('data' => 'description'),
+    array('data' => 'provides'),
+    array('data' => 'deprecated'),
+  );
+  $rows = array();
+  foreach ($token_info['tokens'] as $type => $data) {
+    foreach ($data as $token => $token_data) {
+      $rows[] = array(
+        array('data' => $type),
+        array('data' => $token),
+        array('data' => $token_data['name']),
+        array('data' => $token_data['description']),
+        array('data' => $token_data['type'] ?? ''),
+        array('data' => $token_data['deprecated'] ?? ''),
+      );
+    }
+  }
+  $build[] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+  );
+
+  return $build;
 }
