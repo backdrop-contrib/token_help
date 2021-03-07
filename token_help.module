@@ -28,7 +28,7 @@ function token_help_menu() {
 
 
 /**
- * Return a list of all tokens.
+ * Returns a list of all tokens.
  */
 function token_help_view() {
   return theme('token_tree', array(
@@ -39,7 +39,7 @@ function token_help_view() {
 
 
 /**
- * Return a list of developer information for all tokens.
+ * Returns a list of developer information for all tokens.
  */
 function token_help_devel_view() {
   $token_info = token_info();
