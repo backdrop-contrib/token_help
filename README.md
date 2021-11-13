@@ -1,19 +1,18 @@
 Token Help
 ==========
 
-This module creates an administrative page at admin/content/tokens that lists all tokens, like the Drupal page that was at admin/help/token but was removed in Backdrop when the admin Help menu was removed.
+This module creates two administrative pages with information about tokens provided by other modules:
 
-It also provides a developer page at admin/development/information/tokens that lists the data that various tokens need and/or provide, which is useful when developing token-related modules.
+* **Tokens** at admin/reports/tokens — a listing of all tokens provided by all modules. This is  like the Drupal page that was at admin/help/token but was removed in Backdrop when the admin Help menu was removed.
+
+* **Token Developer Info** at admin/reports/token-developer-info — a table of all of the developer information returned by function [`token_info()`](https://docs.backdropcms.org/api/backdrop/core%21includes%21token.inc/function/token_info/1), consisting of token type, name, description data,  and "needs-data", which indicates that the token chains to another set of tokens.
+
+Users must have the "access administration pages" permission to access either of these pages.
 
 Installation
 ------------
 
 - Install this module using [the official Backdrop CMS instructions](  https://backdropcms.org/guide/modules).
-
-Documentation
--------------
-
-Additional documentation is located in [the Wiki](https://github.com/backdrop-contrib/token_help/wiki/Documentation).
 
 Issues
 ------

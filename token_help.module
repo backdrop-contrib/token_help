@@ -9,15 +9,15 @@
  */
 function token_help_menu() {
 
-  $items['admin/content/tokens'] = array(
+  $items['admin/reports/tokens'] = array(
     'title' => 'Tokens',
     'description' => 'Lists all tokens on the website.',
     'page callback' => 'token_help_view',
     'access arguments' => array('access administration pages'),
   );
 
-  $items['admin/devel/info/tokens'] = array(
-    'title' => 'Token info',
+  $items['admin/reports/token-developer-info'] = array(
+    'title' => 'Token developer info',
     'description' => 'Lists developer information about all tokens on the website.',
     'page callback' => 'token_help_devel_view',
     'access arguments' => array('access administration pages'),

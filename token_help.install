@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Token Help module.
+ */
+
+/**
+ * Note that the Token Help pages have moved to new paths.
+ */
+function token_help_update_1000() {
+  return t('The Token Help pages have moved into the admin Reports menu.');
+}
