@@ -61,7 +61,7 @@ function token_help_devel_view() {
       array('data' => $type),
       array('data' => $data['name']),
       array('data' => $data['description']),
-      array('data' => $data['needs-data']),
+      array('data' => isset($data['needs-data']) ? $data['needs-data'] : ''),
     );
   }
   $build[] = array(
