@@ -12,7 +12,9 @@ Users must have the "access administration pages" permission to access either of
 Installation
 ------------
 
-- Install this module using [the official Backdrop CMS instructions](  https://backdropcms.org/guide/modules).
+Install this module using [the official Backdrop CMS instructions](  https://backdropcms.org/guide/modules).
+
+This module uses the standard system token browser for the **Tokens** page. For sites with large numbers of tokens (particularly if the [Entity Tokens](https://backdropcms.org/project/entity_token) module is installed), the **Tokens** page can take a long time to load or not load at all (this can also happen in other places where the system token browser is used). If you encounter this issue, the [Fast Token Browser](https://backdropcms.org/project/fast_token_browser) replaces the standard system token browser with a click-to-expand listing that renders much more efficiently.
 
 Issues
 ------
