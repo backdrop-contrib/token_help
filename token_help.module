@@ -91,8 +91,8 @@ function token_help_devel_view() {
         array('data' => $token),
         array('data' => $token_data['name']),
         array('data' => $token_data['description']),
-        array('data' => $token_data['type'] ?? ''),
-        array('data' => $token_data['deprecated'] ?? ''),
+        array('data' => isset($token_data['type']) ? $token_data['type'] : ''),
+        array('data' => isset($token_data['deprecated'] ) ? $token_data['deprecated'] : ''),
       );
     }
   }
